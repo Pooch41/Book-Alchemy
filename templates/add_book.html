@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Book</title>
+</head>
+<body>
+
+    <h1>Add a New Book</h1>
+
+    <form action="/add_book" method="POST">
+        <div>
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <br>
+        <div>
+            <label for="publication_date">Publication Date:</label>
+            <input type="date" id="publication_date" name="publication_date" required>
+        </div>
+        <br>
+        <div>
+            <label for="author_id">Author:</label>
+            <select id="author_id" name="author_id" required>
+                {% for author in authors %}
+                <option value="{{ author.id }}">{{ author.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Add Book</button>
+        </div>
+    </form>
+
+</body>
+</html>
