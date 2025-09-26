@@ -75,6 +75,7 @@
                     <div class="flex-grow">
                         <h3 class="text-lg font-bold text-gray-800 mb-1">{{ book.title }}</h3>
                         <p class="text-sm text-gray-600 mb-2">
+                            {{ book.isbn }} <br />
                             {% if book.publication_date %}
                                 Publication Year: {{ book.publication_date.year }}
                                 (ID: {{ book.id }})
